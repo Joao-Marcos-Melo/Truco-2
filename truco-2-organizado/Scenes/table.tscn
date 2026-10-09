@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b1m7ox2wdudj7"]
+
+[ext_resource type="Script" uid="uid://dv74i0oj4ryhf" path="res://Scenes/MatchController.gd" id="1_5cpa6"]
+[ext_resource type="Script" uid="uid://dbbg30vuprsgp" path="res://Entities/Table/CardManager/card_manager.gd" id="2_usajj"]
+[ext_resource type="PackedScene" uid="uid://co4ml2hyqnnf7" path="res://Entities/Table/CardSlot/Card_Slot.tscn" id="3_o4lkm"]
+[ext_resource type="PackedScene" uid="uid://dnvk7egsvx6e7" path="res://Entities/Hands/PlayerHand/Player_Hand.tscn" id="4_xexre"]
+[ext_resource type="PackedScene" uid="uid://c67grlyway1i4" path="res://Entities/Hands/OpponentHand/Opponent_Hand.tscn" id="5_4ntqo"]
+[ext_resource type="Script" uid="uid://bw40g8igoinh7" path="res://Entities/UI/ViraUI.gd" id="6_x0duj"]
+
+[node name="Table" type="Node2D" unique_id=1391685760 node_paths=PackedStringArray("card_manager", "player_hand", "opponent_hand", "vira_ui")]
+script = ExtResource("1_5cpa6")
+card_manager = NodePath("CardManager")
+player_hand = NodePath("PlayerHand")
+opponent_hand = NodePath("OpponentHand")
+vira_ui = NodePath("CanvasLayer/ViraUI")
+
+[node name="CardManager" type="Node2D" parent="." unique_id=1477717632]
+script = ExtResource("2_usajj")
+
+[node name="CardSlot2" parent="CardManager" unique_id=465750766 instance=ExtResource("3_o4lkm")]
+position = Vector2(166, 185)
+
+[node name="CardSlot" parent="CardManager" unique_id=1212362980 instance=ExtResource("3_o4lkm")]
+position = Vector2(178, 532)
+
+[node name="PlayerHand" parent="." unique_id=450826113 instance=ExtResource("4_xexre")]
+
+[node name="OpponentHand" parent="." unique_id=350956062 instance=ExtResource("5_4ntqo")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=361771808]
+
+[node name="ViraUI" type="TextureRect" parent="CanvasLayer" unique_id=137930905]
+offset_left = 326.0
+offset_top = 253.0
+offset_right = 462.0
+offset_bottom = 450.0
+mouse_filter = 2
+script = ExtResource("6_x0duj")
+metadata/_edit_use_anchors_ = true

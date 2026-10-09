@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c67grlyway1i4"]
+
+[ext_resource type="Script" uid="uid://c47bcy2wbe5ay" path="res://Entities/Hands/OpponentHand/Opponent_Hand.gd" id="1_urnxd"]
+
+[node name="OpponentHand" type="Node2D" unique_id=350956062]
+script = ExtResource("1_urnxd")
